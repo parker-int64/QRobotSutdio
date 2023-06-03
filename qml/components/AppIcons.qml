@@ -1,6 +1,8 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import QtQuick.Controls.Material.impl
+import Qt5Compat.GraphicalEffects
 import RobotControl
 /*
  * @brief: sidebar icons
@@ -12,92 +14,137 @@ Item {
     width: 80
     height: 56
 
-    property alias source: icon.source
-    property alias text: iconText.text
-    property alias isFocused: hoverRect.focus
-    property alias textColor: iconText.color
+    property alias source: iconText.text
+    property alias text: iconLabel.text
+    property alias textColor: iconLabel.color
+    property alias color: bgRect.color
 
-    ColumnLayout {
-        id: iconLayout
 
-        spacing: 4
-
-        Rectangle {
-            id: hoverRect
-            width: 56
-            height: 32
-            radius: 16
-            Layout.alignment: Qt.AlignCenter
-            color: "transparent"
+    FocusScope {
+        id: iconScope
+        width: parent.width
+        height: parent.height
+        focus: false
 
 
 
-            Image {
-                id: icon
-                Layout.preferredWidth: 24
-                Layout.preferredHeight: 24
-                width: 24
-                height: 24
-                anchors.centerIn: parent
-                fillMode: Image.PreserveAspectFit
-                smooth: true
-                mipmap: true
-            }
+        ColumnLayout {
+            id: iconLayout
 
-            states: [ "mouseIn", "mouseOut" ]
-            state: "mouseOut"
+            anchors.fill: parent
+
+            spacing: 4
 
 
-            MouseArea {
-                id: hoverRectMouseArea
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered:  {
-                    hoverRect.color = "#E8DEF8"
+
+            Rectangle {
+                id: bgRect
+                width: 56
+                height: 32
+                radius: 16
+                Layout.alignment: Qt.AlignCenter
+                color: "transparent"
+
+
+
+
+                Rectangle{
+                    id: hoverRect
+                    anchors.fill: parent
+                    color: "transparent"
+                    radius: 16
+                    z: -5
+                    state: "mouseOut"
+
+
                 }
 
-                onExited: {
-                    hoverRect.color = "transparent"
+                Ripple {
+                    id: ripple
+                    width: bgRect.width
+                    height: bgRect.height
+                    anchor: bgRect
+                    clipRadius: parent.radius
+                    color: "#60000000"
+                    z: -20
+                    pressed: iconMouseArea.pressed
+                    active: enabled && (iconMouseArea.pressed)
                 }
 
 
+                Text {
+                    id: iconText
+                    anchors.centerIn: parent
+                    font.family: m3icons.font.family
+                    font.weight: m3icons.font.weight
+                    font.styleName: m3icons.font.styleName
+                    font.pixelSize: 24
 
-            }
+                }
 
-            transitions: [
-                Transition {
-                    from: "*"
-                    to: "mouseIn"
-                    NumberAnimation {
-                        target: hoverRect
-                        properties: "scale"
-                        from: 0
-                        to: 1
-                        duration: 300
-                        easing.type: Easing.OutBounce
+
+                MouseArea {
+                    id: bgRectMA
+                    onEntered: {
+                        console.log("You have entered the bgRect Area!")
                     }
                 }
-            ]
+            }
 
-
-        }
-
-        Text {
-            id: iconText
-            Layout.alignment: Qt.AlignHCenter
-            lineHeight: 16
-            font.pixelSize: 12
-            font.weight: 500
-
+            Text {
+                id: iconLabel
+                Layout.alignment: Qt.AlignHCenter
+                lineHeight: 16
+                font.pixelSize: 12
+                font.weight: 500
+            }
         }
     }
-
 
     MouseArea {
+        id: iconMouseArea
         anchors.fill: parent
+        focus: true
+        hoverEnabled: true
         cursorShape: Qt.PointingHandCursor
-        onClicked: {
-            console.log("Yes, I am aware")
+        onClicked:  {
+            iconLayout.forceActiveFocus()
+        }
+    }
+
+
+
+
+    states: [
+        State {
+            name: "active"
+            when: iconLayout.activeFocus
+            PropertyChanges {
+                bgRect {
+                    color: "#E8DEF8"
+
+                }
+                iconText {
+                    scale: 1.1
+                }
+            }
+        },
+
+        State {
+            name: "hover"
+            when: iconMouseArea.containsMouse
+            PropertyChanges {
+                hoverRect{
+                    color: "#CECECE"
+                }
+            }
+        }
+    ]
+
+    transitions: Transition {
+        NumberAnimation {
+            properties: "scale"
+            duration: 200
         }
     }
 
@@ -105,4 +152,11 @@ Item {
 
 
 
+
+
+    // Load the material icon font
+    FontLoader {
+        id: m3icons
+        source: "../../assets/fonts/material-icons.ttf"
+    }
 }

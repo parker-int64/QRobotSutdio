@@ -7,61 +7,104 @@ import RobotControl
 *
 */
 
-Item {
-    width: 200
+Pane {
+    id: navPaneContainer
+    width: 80
     height: 600
+    padding: 0
 
-    Pane {
-        id: navPane
-        width: parent.width
-        height: parent.height
+
+    FocusScope {
+        id: scpoe
+        focus: true
 
         ColumnLayout {
             id: appIconLayout
+            focus: true
 
             spacing: 12
 
-//            AppIcons {
-//                id: menu
-//                source: "../../assets/material-icons/menu.svg"
-//            }
-
             Item {
-                id: menu_t
-                width: 56
-                height: 56
+                width: 24
+                height: 24
 
-                Layout.alignment: Qt.AlignCenter
+                Layout.alignment: Qt.AlignTop
+                Layout.leftMargin: 28
+                Layout.topMargin: 20
+                Layout.bottomMargin: 30
 
                 Image {
-                    id: icon
+                    id: menu
                     width: 24
                     height: 24
-                    source: "../../assets/material-icons/menu.svg"
                     anchors.centerIn: parent
+                    source: "../../assets/material-icons/menu.svg"
                     fillMode: Image.PreserveAspectFit
                     smooth: true
                     mipmap: true
-                }
 
-                Rectangle {
-                    anchors.fill: parent
-                    color: "#CECECE"
+                    ToolTip.visible: menuMA.containsMouse
+                    ToolTip.text: qsTr("Menu")
+
+
+                    MouseArea {
+                        id: menuMA
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        hoverEnabled: true
+                    }
                 }
             }
 
-
             AppIcons {
                 id: home
-                source: "../../assets/material-icons/home.svg"
+                source: "\ue88a"
                 text: qsTr("Home")
             }
 
             AppIcons {
                 id: settings
-                source: "../../assets/material-icons/settings.svg"
+                source: "\ue8b8"
                 text: qsTr("Settings")
             }
+
+
+//            AppIcons {
+//                id: folder
+//                source: "\ue2c7"
+//                text: qsTr("Folder")
+//                MouseArea {
+//                    anchors.fill: parent
+//                    id: folderMA
+//                    onClicked:  {
+//                        folder.forceActiveFocus()
+//                    }
+//                }
+
+
+//                states: State {
+//                    name: "active"
+//                    when: folder.activeFocus
+//                    PropertyChanges {
+//                        folder {
+//                            color: "#D0CFC1"
+//                            scale: 1.1
+//                        }
+//                    }
+//                }
+
+//                transitions: Transition {
+//                    NumberAnimation {
+//                        properties: "scale"
+//                        duration: 300
+//                    }
+//                }
+//            }
         }
+
+
+
     }
+
+
 }

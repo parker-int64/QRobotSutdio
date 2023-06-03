@@ -20,33 +20,46 @@ ApplicationWindow {
     RowLayout {
         id: mainLayout
 
-        anchors.fill: parent
+        width: parent.width
+        height: parent.height
+
+        spacing: 0
 
 
         // Navagation rail on the left side
         NavigationRail {
             id: navRail
-            width: 80
             Layout.fillHeight: true
         }
 
         // Main Content in the middle
         Content {
             id: mainContent
+            Layout.fillHeight: true
             Layout.fillWidth: true
 
-            Layout.fillHeight: true
-
-            Material.background: Material.Purple
+            Material.background: Material.Blue
             Text {
                 id: test
                 text: qsTr("Hello World")
                 anchors.centerIn: parent
                 color: "white"
             }
+
+            Button {
+                id: btn
+                width: 100
+                height: 50
+                text: qsTr("Hello")
+
+            }
+
+
         }
 
     }
+
+
 
 }
 
