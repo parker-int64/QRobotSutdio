@@ -53,6 +53,9 @@ set(RES_FILES
     assets/material-icons/home.svg
     assets/material-icons/settings.svg
     assets/material-icons/menu.svg
+    assets/material-icons/home_filled.svg
+    assets/material-icons/settings_filled.svg
+    assets/fonts/material-icons.ttf
 )
 
 # Add executable file
