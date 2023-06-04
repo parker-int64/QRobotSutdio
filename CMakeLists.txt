@@ -64,8 +64,7 @@ qt_add_executable(RobotControl
 qt_add_qml_module(RobotControl
     URI RobotControl
     VERSION 1.0
-    QML_FILES ${QML_FILES} ${JS_SCRIPTS}
-    RESOURCE_PREFIX "assets"
+    QML_FILES ${QML_FILES}
     RESOURCES ${RES_FILES}
 )
 

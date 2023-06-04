@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
     QQuickStyle::setFallbackStyle("Basic");
 
-#if (QT_VERSION <= QT_VERSION_CHECK(6,5,0))  // For Qt version less then 6.5
+#if (QT_VERSION < QT_VERSION_CHECK(6,5,0))  // For Qt version less then 6.5
     const QUrl url(u"qrc:/RobotControl/qml/Main.qml"_qs);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
         &app, [url](QObject *obj, const QUrl &objUrl) {
