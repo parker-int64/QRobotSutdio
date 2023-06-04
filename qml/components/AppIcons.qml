@@ -35,8 +35,6 @@ Item {
 
             spacing: 4
 
-
-
             Rectangle {
                 id: bgRect
                 width: 56
@@ -45,9 +43,6 @@ Item {
                 Layout.alignment: Qt.AlignCenter
                 color: "transparent"
 
-
-
-
                 Rectangle{
                     id: hoverRect
                     anchors.fill: parent
@@ -55,8 +50,6 @@ Item {
                     radius: 16
                     z: -5
                     state: "mouseOut"
-
-
                 }
 
                 Ripple {
@@ -71,7 +64,6 @@ Item {
                     active: enabled && (iconMouseArea.pressed)
                 }
 
-
                 Text {
                     id: iconText
                     anchors.centerIn: parent
@@ -79,16 +71,8 @@ Item {
                     font.weight: m3icons.font.weight
                     font.styleName: m3icons.font.styleName
                     font.pixelSize: 24
-
                 }
 
-
-                MouseArea {
-                    id: bgRectMA
-                    onEntered: {
-                        console.log("You have entered the bgRect Area!")
-                    }
-                }
             }
 
             Text {
@@ -125,7 +109,7 @@ Item {
 
                 }
                 iconText {
-                    scale: 1.1
+                    scale: 1.2
                 }
             }
         },
@@ -142,10 +126,11 @@ Item {
     ]
 
     transitions: Transition {
-        NumberAnimation {
-            properties: "scale"
-            duration: 200
-        }
+
+            NumberAnimation {
+                properties: "scale"
+                duration: 200
+            }
     }
 
 
