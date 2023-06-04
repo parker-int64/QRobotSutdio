@@ -97,32 +97,31 @@ Item {
 
 
 
-
     states: [
         State {
             name: "active"
             when: iconLayout.activeFocus
             PropertyChanges {
-                bgRect {
-                    color: "#E8DEF8"
-
-                }
-                iconText {
-                    scale: 1.2
-                }
+                target: bgRect
+                color: "#E8DEF8"
             }
+
+            PropertyChanges {
+                target: iconText
+                scale: 1.2
+            }
+
         },
 
         State {
             name: "hover"
             when: iconMouseArea.containsMouse
             PropertyChanges {
-                hoverRect{
-                    color: "#CECECE"
-                }
+                target: hoverRect
+                color: "#CECECE"
+
             }
-        }
-    ]
+        }    ]
 
     transitions: Transition {
 
