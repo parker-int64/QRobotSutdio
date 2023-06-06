@@ -18,30 +18,6 @@ Item {
 
         spacing: 12
 
-        IconSvg {
-            id: menu
-            width: 24
-            height: 24
-
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-            Layout.topMargin: 30
-            Layout.bottomMargin: 30
-
-
-            source: "../../assets/material-icons/menu.svg"
-
-            ToolTip.visible: menuMA.containsMouse
-            ToolTip.text: qsTr("Menu")
-
-            MouseArea {
-                id: menuMA
-                anchors.fill: parent
-                cursorShape: Qt.PointingHandCursor
-                hoverEnabled: true
-
-            }
-        }
-
 
         Component {
             id: iconDelegate
@@ -65,7 +41,7 @@ Item {
                     propagateComposedEvents: true
                     onClicked: {
                         wrapper.ListView.view.currentIndex = index;
-                        root._stackView.push("../pages/"+ iconName + "Page.qml")
+                        root._view.setCurrentIndex(index)
                     }
                 }
             }

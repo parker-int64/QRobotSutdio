@@ -20,7 +20,7 @@ Item {
     property alias bgColor: bgRect.color
     property var name
 
-    ColumnLayout {
+    RowLayout {
         id: iconLayout
 
         anchors.fill: parent
@@ -67,7 +67,7 @@ Item {
 
         Text {
             id: iconLabel
-            Layout.alignment: Qt.AlignHCenter
+            Layout.alignment: Qt.AlignVCenter
             lineHeight: 16
             font.pixelSize: 12
             font.weight: 500

@@ -36,14 +36,17 @@ set(PROJECT_SOURCES src/main.cpp)
 
 # Set the qml files
 set(QML_FILES
-    qml/components/NavigationRail.qml
+    qml/components/NavigationBar.qml
     qml/components/Content.qml
     qml/components/IconFont.qml
     qml/components/IconSvg.qml
     qml/components/IconButton.qml
     qml/components/M3Extra.qml
+    qml/components/AppHeader.qml
+    qml/components/AppMenuDrawer.qml
     qml/pages/HomePage.qml
     qml/pages/SettingsPage.qml
+
     qml/Main.qml)
 
 

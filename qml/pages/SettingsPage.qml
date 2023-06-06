@@ -6,7 +6,8 @@ import QtQuick.Layouts
 
 Pane {
     id: settingsPageContainer
-
+    implicitWidth: 800
+    implicitHeight: 600
 
     Button {
         width: 150

@@ -17,34 +17,28 @@ ApplicationWindow {
 
 
 
-    property alias _stackView: mainContent._pageView
+
+
+    property alias _view: _mainContent._pageView
+    property alias _drawer: _menuDrawer
     /*
      *  @brief: the application's main layout.
     */
 
-    RowLayout {
-        id: mainLayout
 
-        anchors.fill: parent
+    header: AppHeader { }
 
-        spacing: 0
 
-        // Navagation rail on the left side
-        NavigationRail {
-            id: navRail
-            width: 80
-            Layout.fillHeight: true
-        }
-
-        // Main Content in the middle
-        Content {
-            id: mainContent
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            Material.background: Material.Blue
-
-        }
+    AppMenuDrawer {
+        id: _menuDrawer
     }
+
+
+    Content{
+        id: _mainContent
+        anchors.fill: parent
+    }
+
 
 
 

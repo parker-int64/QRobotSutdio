@@ -11,13 +11,17 @@ Item {
 
     property alias _pageView: mainView
 
-    StackView {
+    SwipeView {
 
         id: mainView
         anchors.fill: parent
 
+        currentIndex: 0
 
-        initialItem: HomePage {}
+        HomePage {}
+
+        SettingsPage {}
+
 
 
 
