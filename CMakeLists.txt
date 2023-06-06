@@ -38,9 +38,15 @@ set(PROJECT_SOURCES src/main.cpp)
 set(QML_FILES
     qml/components/NavigationRail.qml
     qml/components/Content.qml
-    qml/components/AppIcons.qml
+    qml/components/IconFont.qml
+    qml/components/IconSvg.qml
+    qml/components/IconButton.qml
     qml/components/M3Extra.qml
+    qml/pages/HomePage.qml
+    qml/pages/SettingsPage.qml
     qml/Main.qml)
+
+
 
 # Singleton type in QML must add properties
 # So the generated qmldir will add "singleton"
