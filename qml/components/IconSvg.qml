@@ -1,6 +1,8 @@
 import QtQuick
 import QtQuick.Controls
-
+//
+// Load image file. (particularly the SVG format)
+//
 
 Item {
     width: 24

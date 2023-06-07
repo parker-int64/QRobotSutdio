@@ -4,81 +4,83 @@ import QtQuick.Layouts
 import QtQuick.Controls.Material.impl
 import RobotControl
 /*
- * @brief: sidebar icons
- *         the material3 style
+ * @brief: IconButton the material3 style
+ *
 */
 
 Item {
     id: iconContainer
-    width: 80
+    width: 360
     height: 56
-    focus: true
 
     property alias code: iconText.source
     property alias text: iconLabel.text
     property alias textColor: iconLabel.color
     property alias bgColor: bgRect.color
-    property var name
 
-    RowLayout {
-        id: iconLayout
 
-        anchors.fill: parent
-
-        spacing: 4
+    Rectangle {
+        id: bgRect
+        width: 336
+        height: 56
+        radius: 28
+        color: "transparent"
+        anchors.centerIn: parent
+        z: 10
 
 
         Rectangle {
-
-            id: bgRect
-            width: 56
-            height: 32
-            radius: 16
-            Layout.alignment: Qt.AlignCenter
+            id: hoverRect
+            anchors.fill: parent
             color: "transparent"
+            radius: 28
+            z: -1
+        }
 
-            Rectangle{
-                id: hoverRect
-                anchors.fill: parent
-                color: "transparent"
-                radius: 16
-                z: -5
-            }
+        Ripple {
+            id: ripple
+            width: bgRect.width
+            height: bgRect.height
+            anchor: bgRect
+            clipRadius: 5
+            color: "#60000000"
+            pressed: iconMouseArea.pressed
+            active: enabled && (iconMouseArea.pressed)
+        }
 
-            Ripple {
-                id: ripple
-                width: bgRect.width
-                height: bgRect.height
-                anchor: bgRect
-                clipRadius: parent.radius
-                color: "#60000000"
-                z: -20
-                pressed: iconMouseArea.pressed
-                active: enabled && (iconMouseArea.pressed)
-            }
+
+        RowLayout {
+            id: iconLayout
+
+            anchors.fill: parent
+
+            spacing: 12
 
             IconFont {
                 id: iconText
                 source: code
-                anchors.centerIn: parent
+                color: "#5F6368"
+                Layout.leftMargin: 16
+                Layout.alignment: Qt.AlignVCenter
             }
 
+            Text {
+                id: iconLabel
+                Layout.fillWidth: true
+                Layout.alignment: Qt.AlignVCenter
+                font.pixelSize: 12
+                font.weight: 500
+            }
         }
 
-        Text {
-            id: iconLabel
-            Layout.alignment: Qt.AlignVCenter
-            lineHeight: 16
-            font.pixelSize: 12
-            font.weight: 500
+        MouseArea {
+            id: iconMouseArea
+            anchors.fill: parent
+            hoverEnabled: true
         }
+
     }
 
-    MouseArea {
-        id: iconMouseArea
-        anchors.fill: parent
-        hoverEnabled: true
-    }
 
     states: [
         State {
@@ -90,13 +92,4 @@ Item {
             }
         }
     ]
-
-    transitions: Transition {
-
-            NumberAnimation {
-                properties: "scale"
-                duration: 200
-            }
-    }
-
 }

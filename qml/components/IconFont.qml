@@ -1,12 +1,19 @@
 import QtQuick
 import QtQuick.Controls
 
+//
+// Material Symbols icon font
+// Check: https://fonts.google.com/icons?icon.platform=web&icon.style=Rounded
+//
+
 Item {
     width: 24
     height: 24
 
     property alias source: fontIcon.text
+    property alias color: fontIcon.color
     property int size: 24
+
 
     Text {
         id: fontIcon
