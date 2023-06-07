@@ -3,13 +3,17 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 
+//
+//  This is the drawer on the left of the page
+//  Default: closed.
+
 Drawer {
     id: menuDrawer
-    width: 300
+    width: 360
     height: parent.height
 
-    NavigationBar {
-        id: navBar
+    NavigationDrawer {
+        id: navDrawer
         width: parent.width
         Layout.fillHeight: true
     }
