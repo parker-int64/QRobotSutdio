@@ -1,6 +1,7 @@
 build/
 .vscode
 .idea/
+.vs/
 # From Visual Studio
 out/ 
 CMakeLists.txt.user*
