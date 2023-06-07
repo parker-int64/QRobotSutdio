@@ -30,9 +30,10 @@ int main(int argc, char *argv[])
 
 #ifdef _DEBUG
     qDebug() << "Program Version: "
-             << QString("%1.%2.%3").arg(VERSION_MAJOR)
+             << QString("%1.%2.%3.%4").arg(VERSION_MAJOR)
                                    .arg(VERSION_MINOR)
                                    .arg(VERSION_PATCH)
+                                   .arg(VERSION_TWEAK)
              << Qt::endl;
 #endif
 
