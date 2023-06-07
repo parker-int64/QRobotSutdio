@@ -5,6 +5,7 @@
 #define VERSION_MAJOR @RobotControlManager_VERSION_MAJOR@
 #define VERSION_MINOR @RobotControlManager_VERSION_MINOR@
 #define VERSION_PATCH @RobotControlManager_VERSION_PATCH@
+#define VERSION_TWEAK @RobotControlManager_VERSION_TWEAK@
 
 
 #endif // CONFIG_H
