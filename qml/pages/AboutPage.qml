@@ -3,7 +3,6 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import RobotControl
 
-
 Pane {
     id: _paneContainer
     implicitWidth: 800
@@ -29,6 +28,8 @@ Pane {
                 font.pixelSize: 24
                 Layout.alignment: Qt.AlignHCenter
             }
+
+            // TODO: add app version here.
 
 
             Label {

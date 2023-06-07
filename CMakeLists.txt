@@ -33,7 +33,8 @@ configure_file(winicon.rc.in winicon.rc)
 
 
 # Set the source files
-set(PROJECT_SOURCES src/main.cpp)
+set(PROJECT_SOURCES
+    src/main.cpp)
 
 # Set the qml files
 set(QML_FILES
@@ -85,11 +86,23 @@ endif()
 
 
 # Generate QML modules
+# Main module
 qt_add_qml_module(RobotControl
     URI RobotControl
     VERSION 1.0
     QML_FILES ${QML_FILES}
     RESOURCES ${RES_FILES}
+)
+
+# Extra module
+#add_library(ExtraUtils )
+qt_add_qml_module(ExtraUtils
+    URI Utils
+    VERSION 1.0
+    SOURCES
+        src/utils.h
+        src/utils.cpp
+
 )
 
 
@@ -107,6 +120,11 @@ set_target_properties(RobotControl PROPERTIES
 # Contains the generated header from `configure_file()`
 target_include_directories(RobotControl
     PRIVATE ${CMAKE_CURRENT_BINARY_DIR}
+)
+
+target_include_directories(ExtraUtils
+    PRIVATE ${CMAKE_CURRENT_BINARY_DIR}
+            ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
 # Link libraries
