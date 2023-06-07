@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(RobotControlManager
-    VERSION 0.1.0
+    VERSION 0.1.1.10
     DESCRIPTION "A Qt Quick based robot control software, personal interest only."
     HOMEPAGE_URL ""
     LANGUAGES CXX)
@@ -29,6 +29,7 @@ endif()
 
 # Generated something like versions, etc
 configure_file(config.h.in config.h @ONLY)
+configure_file(winicon.rc.in winicon.rc)
 
 
 # Set the source files
@@ -36,7 +37,7 @@ set(PROJECT_SOURCES src/main.cpp)
 
 # Set the qml files
 set(QML_FILES
-    qml/components/NavigationBar.qml
+    qml/components/NavigationDrawer.qml
     qml/components/Content.qml
     qml/components/IconFont.qml
     qml/components/IconSvg.qml
@@ -46,7 +47,7 @@ set(QML_FILES
     qml/components/AppMenuDrawer.qml
     qml/pages/HomePage.qml
     qml/pages/SettingsPage.qml
-
+    qml/pages/AboutPage.qml
     qml/Main.qml)
 
 
@@ -59,14 +60,28 @@ set_source_files_properties(qml/components/M3Extra.qml
 )
 # Set the resources files
 set(RES_FILES
-    assets/material-icons/menu.svg
+    assets/icons/menu.svg
+    assets/icons/qtlogo.svg
+    assets/icons/github.svg
     assets/fonts/material-icons.ttf
+    assets/favicon.ico
 )
 
 # Add executable file
-qt_add_executable(RobotControl
-    ${PROJECT_SOURCES}
-)
+
+if(WIN32)
+    set(RC_FILES ${CMAKE_CURRENT_BINARY_DIR}/winicon.rc) # use the generated rc file
+
+    qt_add_executable(RobotControl
+        ${PROJECT_SOURCES} ${RC_FILES}
+    )
+
+elseif(UNIX)
+    qt_add_executable(RobotControl
+        ${PROJECT_SOURCES}
+    )
+endif()
+
 
 
 # Generate QML modules
