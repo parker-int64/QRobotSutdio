@@ -3,6 +3,10 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import RobotControl
 
+//
+// This is the main content area
+//
+
 Item {
     id: contentView
     width: 800
@@ -18,9 +22,13 @@ Item {
 
         currentIndex: 0
 
+        // Todo: add more pages here
+
         HomePage {}
 
         SettingsPage {}
+
+        AboutPage {}
 
 
 
