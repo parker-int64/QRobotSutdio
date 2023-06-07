@@ -1,4 +1,7 @@
 build/
 .vscode
 .idea/
+# From Visual Studio
+out/ 
 CMakeLists.txt.user*
+CMakeSettings.json
