@@ -9,6 +9,8 @@ Pane {
     implicitWidth: 800
     implicitHeight: 600
 
+//    Material.background: Material.Teal
+
     Button {
         width: 150
         height: 56
