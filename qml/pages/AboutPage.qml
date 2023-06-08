@@ -2,11 +2,16 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import RobotControl
-
+import ExtraUtils
 Pane {
     id: _paneContainer
     implicitWidth: 800
     implicitHeight: 600
+
+    Utils {
+        id: utils
+    }
+
 
     ScrollView {
         id: _scrollview
@@ -23,20 +28,26 @@ Pane {
 
 
             Label {
-                id: _header
-                text: qsTr("Robot Control, a simple Qt Quikc software to control robotic arm")
+                id: _pageTitle
+                text: qsTr("About this software")
                 font.pixelSize: 24
                 Layout.alignment: Qt.AlignHCenter
             }
 
-            // TODO: add app version here.
 
+            Repeater {
+                id: _appInfo
+                model: [utils.getAppName(), utils.getAppVersion(), utils.getAppDescription(), utils.getAppHomePageUrl()]
 
-            Label {
-                id: _description
-                text: qsTr("This is a personal interest only. The following open source softwares are used in this project. ")
-                Layout.alignment: Qt.AlignHCenter
+                Label {
+                    required property string modelData
+                    text: modelData
+                    Layout.alignment: Qt.AlignHCenter
+                }
             }
+
+
+
 
             IconSvg {
                 id: _qtlogo
