@@ -13,8 +13,8 @@ IDI_ICON1               ICON            DISCARDABLE        "${CMAKE_CURRENT_SOUR
 #endif
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION @RobotControlManager_VERSION_MAJOR@,@RobotControlManager_VERSION_MINOR@,@RobotControlManager_VERSION_PATCH@,@RobotControlManager_VERSION_TWEAK@
- PRODUCTVERSION @RobotControlManager_VERSION_MAJOR@,@RobotControlManager_VERSION_MINOR@,@RobotControlManager_VERSION_PATCH@,@RobotControlManager_VERSION_TWEAK@
+ FILEVERSION ${CMAKE_PROJECT_VERSION_MAJOR},${CMAKE_PROJECT_VERSION_MINOR},${CMAKE_PROJECT_VERSION_PATCH},${CMAKE_PROJECT_VERSION_TWEAK}
+ PRODUCTVERSION ${CMAKE_PROJECT_VERSION_MAJOR},${CMAKE_PROJECT_VERSION_MINOR},${CMAKE_PROJECT_VERSION_PATCH},${CMAKE_PROJECT_VERSION_TWEAK}
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -30,14 +30,14 @@ BEGIN
         BLOCK "040904b0"
         BEGIN
             VALUE "CompanyName", "Open Source Group"
-            VALUE "FileDescription", "${RobotControlManager_DESCRIPTION}"
-            VALUE "FileVersion", "@RobotControlManager_VERSION_MAJOR@.@RobotControlManager_VERSION_MINOR@.@RobotControlManager_VERSION_PATCH@.@RobotControlManager_VERSION_TWEAK@"
+            VALUE "FileDescription", "${CMAKE_PROJECT_DESCRIPTION}"
+            VALUE "FileVersion", "${CMAKE_PROJECT_VERSION_MAJOR}.${CMAKE_PROJECT_VERSION_MINOR}.${CMAKE_PROJECT_VERSION_PATCH}.${CMAKE_PROJECT_VERSION_TWEAK}"
             VALUE "InternalName", "RobotControl.exe"
             VALUE "LegalCopyright", "MIT"
             VALUE "LegalTrademarks", "Open Source Software"
             VALUE "OriginalFilename", "appRobotControl.exe"
-            VALUE "ProductName", "${PROJECT_NAME}"
-            VALUE "ProductVersion", "@RobotControlManager_VERSION_MAJOR@.@RobotControlManager_VERSION_MINOR@.@RobotControlManager_VERSION_PATCH@.@RobotControlManager_VERSION_TWEAK@"
+            VALUE "ProductName", "${CMAKE_PROJECT_NAME}"
+            VALUE "ProductVersion", "${CMAKE_PROJECT_VERSION_MAJOR}.${CMAKE_PROJECT_VERSION_MINOR}.${CMAKE_PROJECT_VERSION_PATCH}.${CMAKE_PROJECT_VERSION_TWEAK}"
         END
     END
     BLOCK "VarFileInfo"
