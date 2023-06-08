@@ -42,6 +42,7 @@ Item {
                         wrapper.ListView.view.currentIndex = index;
                         root._view.setCurrentIndex(index)
 
+                        root._headerTitleText = iconText
                         // after navigation, we should close the drawer
                         root._drawer.close()
 

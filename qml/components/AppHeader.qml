@@ -12,6 +12,8 @@ ToolBar {
 
     height: 64
 
+    property alias _titleText: _title.text
+
     background: Rectangle {
         anchors.fill: parent
         color: "transparent"
@@ -45,7 +47,6 @@ ToolBar {
 
         Label {
             id: _title
-            text: qsTr("Robot Control")
             font.pixelSize: 24
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignCenter
