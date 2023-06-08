@@ -19,7 +19,7 @@ If you'd like to build from source, just follow the steps below.
 
 ### Requirement
 
-+ Qt 6 (>= 6.2 LTS is required, recommend 6.5 LTS). The essential modules: core QtQuick QuickControls2 LinguistTools
++ Qt 6 (>= 6.2 LTS is required, recommend 6.5 LTS). The essential components: core, QtQuick, QuickControls2, LinguistTools. You can use `Qt Maintenance Tool` to install them.
 + C++ Complier must support `c++17`. (MSVC 2019, GCC 9, Clang 10) 
 
 ### Build Steps

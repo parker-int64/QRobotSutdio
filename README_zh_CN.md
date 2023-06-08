@@ -19,7 +19,7 @@
 
 ### 环境要求
 
-+ Qt 6 (>= 6.2 LTS ，推荐 6.5 LTS)。 必须要的模块: core QtQuick QuickControls2 LinguistTools
++ Qt 6 (>= 6.2 LTS ，推荐 6.5 LTS)。 必须要的组件: core, QtQuick, QuickControls2, LinguistTools，一般直接用`Qt Maintenance Tool`安装即可。
 + 你的C++ 编译器必须支持 `c++17`。 (推荐MSVC 2019, GCC 9, Clang 11) 
 
 ### 编译步骤
