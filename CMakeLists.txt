@@ -1,15 +1,16 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(RobotControlManager
-    VERSION 0.1.1.10
+project(QRobotStudio
+    VERSION 0.1.1.30
     DESCRIPTION "A Qt Quick based robot control software, personal interest only."
-    HOMEPAGE_URL ""
+    HOMEPAGE_URL "https://github.com/parker-int64/RobotControlApplication"
     LANGUAGES CXX)
+
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find the required packages
-find_package(Qt6 REQUIRED COMPONENTS Quick  QuickControls2)
+find_package(Qt6 REQUIRED COMPONENTS core Quick  QuickControls2 LinguistTools)
 
 # If the build type is debug, the program will print debug info.
 # If not, optimize the program with flag `/O2` or `-O2`
@@ -28,7 +29,7 @@ else()
 endif()
 
 # Generated something like versions, etc
-configure_file(config.h.in config.h @ONLY)
+configure_file(config.h.in config.h)
 configure_file(winicon.rc.in winicon.rc)
 
 
@@ -73,12 +74,12 @@ set(RES_FILES
 if(WIN32)
     set(RC_FILES ${CMAKE_CURRENT_BINARY_DIR}/winicon.rc) # use the generated rc file
 
-    qt_add_executable(RobotControl
+    qt_add_executable(${CMAKE_PROJECT_NAME}
         ${PROJECT_SOURCES} ${RC_FILES}
     )
 
 elseif(UNIX)
-    qt_add_executable(RobotControl
+    qt_add_executable(${CMAKE_PROJECT_NAME}
         ${PROJECT_SOURCES}
     )
 endif()
@@ -87,27 +88,19 @@ endif()
 
 # Generate QML modules
 # Main module
-qt_add_qml_module(RobotControl
+qt_add_qml_module(${CMAKE_PROJECT_NAME}
     URI RobotControl
     VERSION 1.0
     QML_FILES ${QML_FILES}
     RESOURCES ${RES_FILES}
 )
 
-# Extra module
-#add_library(ExtraUtils )
-qt_add_qml_module(ExtraUtils
-    URI Utils
-    VERSION 1.0
-    SOURCES
-        src/utils.h
-        src/utils.cpp
-
-)
+# Extra QML module
+add_subdirectory(modules/ExtraUtils)
 
 
 # Additional target properties
-set_target_properties(RobotControl PROPERTIES
+set_target_properties(${CMAKE_PROJECT_NAME} PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
@@ -115,26 +108,20 @@ set_target_properties(RobotControl PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-
 # The extra include directories
 # Contains the generated header from `configure_file()`
-target_include_directories(RobotControl
+target_include_directories(${CMAKE_PROJECT_NAME}
     PRIVATE ${CMAKE_CURRENT_BINARY_DIR}
 )
 
-target_include_directories(ExtraUtils
-    PRIVATE ${CMAKE_CURRENT_BINARY_DIR}
-            ${CMAKE_CURRENT_SOURCE_DIR}/src
-)
-
-# Link libraries
-target_link_libraries(RobotControl
+target_link_libraries(${CMAKE_PROJECT_NAME}
     PRIVATE Qt6::Quick
             Qt6::QuickControls2
+            extra_utilsplugin
 )
 
 # Install operations
-install(TARGETS RobotControl
+install(TARGETS ${CMAKE_PROJECT_NAME}
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
