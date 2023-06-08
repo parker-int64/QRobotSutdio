@@ -11,6 +11,12 @@ class Utils : public QObject
 public:
     explicit Utils(QObject *parent = nullptr);
 
+    Q_INVOKABLE QString getAppName() const;
+
+    Q_INVOKABLE QString getAppDescription() const;
+
+    Q_INVOKABLE QString getAppHomePageUrl() const;
+
     Q_INVOKABLE QString getAppVersion() const;
 
 signals:
