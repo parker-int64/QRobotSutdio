@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(QRobotStudio
-    VERSION 0.1.1.30
+    VERSION 0.1.1.40
     DESCRIPTION "A Qt Quick based robot control software, personal interest only."
-    HOMEPAGE_URL "https://github.com/parker-int64/RobotControlApplication"
-    LANGUAGES CXX)
+    HOMEPAGE_URL "https://github.com/parker-int64/QRobotSutdio"
+    LANGUAGES CXX C)
 
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -39,17 +39,20 @@ set(PROJECT_SOURCES
 
 # Set the qml files
 set(QML_FILES
-    qml/components/NavigationDrawer.qml
-    qml/components/Content.qml
+    qml/components/ApplicationLayout/AppHeader.qml
+    qml/components/ApplicationLayout/AppMenuDrawer.qml
+    qml/components/ApplicationLayout/Content.qml
+    qml/components/ApplicationLayout/NavigationDrawer.qml
     qml/components/IconFont.qml
     qml/components/IconSvg.qml
     qml/components/IconButton.qml
     qml/components/M3Extra.qml
-    qml/components/AppHeader.qml
-    qml/components/AppMenuDrawer.qml
+    qml/components/MotionControlPage/VelocityPanel.qml
+    qml/components/MotionControlPage/ControlButtonsPanel.qml
     qml/pages/HomePage.qml
     qml/pages/SettingsPage.qml
     qml/pages/AboutPage.qml
+    qml/pages/MotionControlPage.qml
     qml/Main.qml)
 
 
@@ -65,6 +68,7 @@ set(RES_FILES
     assets/icons/menu.svg
     assets/icons/qtlogo.svg
     assets/icons/github.svg
+    assets/icons/robot_arm_large.svg
     assets/fonts/material-icons.ttf
     assets/favicon.ico
 )
