@@ -29,7 +29,7 @@ Item {
                 IconButton {
                     id: iconId
                     code: iconCode
-                    bgColor: wrapper.ListView.isCurrentItem ? "#E8DEF8" : "transparent"
+                    bgColor: wrapper.ListView.isCurrentItem ? Material.color(Material.Pink, Material.Shade50) : "transparent"
                     text: iconText
                 }
 
@@ -63,8 +63,10 @@ Item {
                 id: iconModel
                 Component.onCompleted:  {
                     iconModel.append({"iconId": "home", "iconCode": "\ue88a", "iconText": qsTr("Home")})
+                    iconModel.append({"iconId": "motionControl", "iconCode": "\ue89f", "iconText": qsTr("Motion Control")})
                     iconModel.append({"iconId": "settings", "iconCode": "\ue8b8", "iconText": qsTr("Settings")})
                     iconModel.append({"iconId": "about", "iconCode": "\ue88e", "iconText": qsTr("About")})
+
                 }
             }
         }

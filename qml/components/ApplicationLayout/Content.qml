@@ -22,9 +22,13 @@ Item {
 
         currentIndex: 0
 
+        interactive: false
+
         // Todo: add more pages here
 
         HomePage {}
+
+        MotionControlPage {}
 
         SettingsPage {}
 

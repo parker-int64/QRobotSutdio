@@ -44,6 +44,5 @@ ApplicationWindow {
         id: _mainContent
         anchors.fill: parent
     }
-
 }
 
