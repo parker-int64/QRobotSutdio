@@ -73,15 +73,17 @@ Pane {
                 Layout.alignment: Qt.AlignHCenter
             }
 
-            RowLayout {
-                id: _materialIcons
+            GridLayout {
+                id: _iconsGrid
+                columns: 4
                 Layout.alignment: Qt.AlignHCenter
                 Layout.topMargin: 30
-                spacing: 12
 
                 Repeater {
                     id: _iconsRepeater
-                    model: ["\ue5c4", "\ue5d5", "\ue88a", "\ue3c9", "\ue8b8"]
+                    model: ["\ue5c4", "\ue5d5", "\ue88a", "\ue3c9",
+                            "\ue8b8", "\ue856", "\ue5c3", "\ue029",
+                            "\ue158", "\uf01f", "\ue86c", "\ue8df"]
 
                     IconFont {
                         required property string modelData
@@ -114,7 +116,5 @@ Pane {
             }
 
         }
-
-
     }
 }
