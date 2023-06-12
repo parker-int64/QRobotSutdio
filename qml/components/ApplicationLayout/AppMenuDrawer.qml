@@ -10,7 +10,7 @@ import QtQuick.Layouts
 Drawer {
     id: menuDrawer
     width: 360
-    height: parent.height
+    height: 600
 
     NavigationDrawer {
         id: navDrawer

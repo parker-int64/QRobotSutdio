@@ -15,61 +15,79 @@ Pane {
         contentHeight: parent.height
         anchors.fill: parent
 
-        GridLayout {
-            id: _gridLayout
+
+        RowLayout {
+            id: _container
 
             anchors.fill: parent
-            antialiasing: true
 
-            rows: 5
-            columns: 2
+            ColumnLayout {
+                id: _robot3dAndInfo
 
-            // Todo: Use QQuick 3D to load 3D model
-
-            IconSvg {
-                Layout.preferredWidth: 300
-                Layout.preferredHeight: 300
-                Layout.row: 0
-                Layout.column: 0
-                Layout.rowSpan: 4
-                Layout.columnSpan: 1
-                source: "file:///D:/project/QRobotStudio/QRobotStudio/temp/img/xarm.jpg"
-                Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            }
-
-            Pane {
-                id: _angleAndAcceleration
-                Layout.row: 5
-                Layout.column: 0
-                Layout.rowSpan: 1
-                Layout.columnSpan: 1
-                Layout.preferredWidth: 300
                 Layout.fillHeight: true
-                Material.elevation: 5
+                Layout.leftMargin: 10
+                spacing: 18
+                Layout.margins: 10
+
+
+                Robot3DView {
+                    id: _view
+                    Layout.preferredWidth: 400
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 400
+                }
+
+                AngleAccPanel {
+                    id: _angleAndAcc
+                }
+
+                XYZRPYPanel {
+                    id: _xyzAndRpy
+                }
             }
 
 
-            Pane {
-                id: _xyzAndRpy
-                Layout.row: 5
-                Layout.column: 1
-                Layout.rowSpan: 1
-                Layout.columnSpan: 1
-                Layout.preferredWidth: 300
+            ColumnLayout {
+                id: _robotControl
                 Layout.fillHeight: true
-                Material.elevation: 5
-            }
+                spacing: 12
 
 
-            ControlButtonsPanel {
-                id: _controlButtons
-            }
+                Layout.alignment: Qt.AlignRight | Qt.AlignTop
+                Layout.margins: 10
+
+                RobotStatusPanel {
+                    id: _robotStatus
+                    Layout.preferredWidth: 400
+                    Layout.maximumWidth: 400
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 75
+                }
 
 
-            VelocityPanel {
-                id: _velocityPanel
+                ControlButtonsPanel {
+                    id: _controlButtons
+                    Layout.preferredWidth: 400
+                    Layout.maximumWidth: 400
+                    Layout.fillWidth: true
+                }
+
+                VelocityPanel {
+                    id: _velocityPanel
+                    Layout.preferredWidth: 400
+                    Layout.maximumWidth: 400
+                    Layout.fillWidth: true
+                }
+
+                MotionControlPanel {
+                    id: _motionControlBtns
+                    Layout.preferredWidth: 200
+                }
+
             }
         }
 
     }
 }
+
+

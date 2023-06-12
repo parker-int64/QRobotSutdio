@@ -37,6 +37,7 @@ ApplicationWindow {
 
     AppMenuDrawer {
         id: _menuDrawer
+        height: parent.height
     }
 
 
