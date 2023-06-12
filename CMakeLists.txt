@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(QRobotStudio
-    VERSION 0.1.1.40
+    VERSION 0.1.1.50
     DESCRIPTION "A Qt Quick based robot control software, personal interest only."
     HOMEPAGE_URL "https://github.com/parker-int64/QRobotSutdio"
     LANGUAGES CXX C)
@@ -49,11 +49,17 @@ set(QML_FILES
     qml/components/M3Extra.qml
     qml/components/MotionControlPage/VelocityPanel.qml
     qml/components/MotionControlPage/ControlButtonsPanel.qml
+    qml/components/MotionControlPage/Robot3DView.qml
+    qml/components/MotionControlPage/AngleAccPanel.qml
+    qml/components/MotionControlPage/XYZRPYPanel.qml
+    qml/components/MotionControlPage/RobotStatusPanel.qml
+     qml/components/MotionControlPage/MotionControlPanel.qml
     qml/pages/HomePage.qml
     qml/pages/SettingsPage.qml
     qml/pages/AboutPage.qml
     qml/pages/MotionControlPage.qml
     qml/Main.qml)
+
 
 
 
