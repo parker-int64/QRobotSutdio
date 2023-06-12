@@ -22,13 +22,13 @@ QString Utils::getAppVersion() const {
 
 
 QString Utils::getAppName() const {
-    return QString(tr("Application Name: %1").arg(APP_NAME));
+    return QString(tr("Application name: %1").arg(APP_NAME));
 }
 
 QString Utils::getAppDescription() const {
-    return QString(tr("Application Description: %1").arg(APP_DESCRIPTION));
+    return QString(tr("Application description: %1").arg(APP_DESCRIPTION));
 }
 
 QString Utils::getAppHomePageUrl() const {
-    return QString(tr("Application HomePage: %1").arg(APP_HOMEPAGE_URL));
+    return QString(tr("Application home url: %1").arg(APP_HOMEPAGE_URL));
 }
