@@ -4,8 +4,8 @@ import QtQuick.Layouts
 
 Pane {
     id: _controlButtons
-    width: 400
-    height: 75
+    implicitWidth: 400
+    implicitHeight: 75
     Material.elevation: 5
 
 
@@ -18,6 +18,9 @@ Pane {
             id: _enableSwitch
             text: checked ? qsTr("Enable") : qsTr("Disable")
             Layout.alignment: Qt.AlignVCenter
+
+            ToolTip.visible: hovered
+            ToolTip.text: qsTr("Enable or disable the robot")
 
         }
 

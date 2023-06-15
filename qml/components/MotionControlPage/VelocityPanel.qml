@@ -5,8 +5,8 @@ import QtQuick.Layouts
 Pane {
     id: _velocityControl
 
-    width: 400
-    height: 75
+    implicitWidth: 400
+    implicitHeight: 75
     Material.elevation: 5
 
     RowLayout {

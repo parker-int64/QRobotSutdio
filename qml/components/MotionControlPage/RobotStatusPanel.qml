@@ -5,7 +5,8 @@ import RobotControl
 
 Pane {
     id: _robotStatus
-    Layout.preferredWidth: 400
+    implicitWidth: 400
+    implicitHeight: 75
     Material.elevation: 6
     property bool _robotNominal: false
 

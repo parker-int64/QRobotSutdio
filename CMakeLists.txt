@@ -53,7 +53,8 @@ set(QML_FILES
     qml/components/MotionControlPage/AngleAccPanel.qml
     qml/components/MotionControlPage/XYZRPYPanel.qml
     qml/components/MotionControlPage/RobotStatusPanel.qml
-     qml/components/MotionControlPage/MotionControlPanel.qml
+    qml/components/MotionControlPage/RobotTCPPanel.qml
+    qml/components/MotionControlPage/RobotJointPanel.qml
     qml/pages/HomePage.qml
     qml/pages/SettingsPage.qml
     qml/pages/AboutPage.qml

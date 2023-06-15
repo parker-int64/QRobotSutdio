@@ -3,91 +3,56 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import RobotControl
 
-
 Pane {
     id: _paneContainer
     implicitWidth: 800
     implicitHeight: 600
+    padding: 0
+
 
     ScrollView {
-        id: _scrollview
+        id: _scrollControls
         contentWidth: parent.width
         contentHeight: parent.height
         anchors.fill: parent
+        padding: 10
 
 
         RowLayout {
-            id: _container
-
             anchors.fill: parent
 
+
             ColumnLayout {
-                id: _robot3dAndInfo
-
+                id: _tcpMovement
+                Layout.preferredWidth: 300
                 Layout.fillHeight: true
-                Layout.leftMargin: 10
-                spacing: 18
-                Layout.margins: 10
 
-
-                Robot3DView {
-                    id: _view
-                    Layout.preferredWidth: 400
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: 400
-                }
-
-                AngleAccPanel {
-                    id: _angleAndAcc
-                }
-
-                XYZRPYPanel {
-                    id: _xyzAndRpy
+                RobotTCPPanel {
+                    Layout.fillHeight: true
+                    id: _tcpPanel
                 }
             }
 
+            ColumnLayout {
+                id: _robot3DView
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+            }
 
             ColumnLayout {
-                id: _robotControl
+                id: _jointMovement
+                Layout.preferredWidth: 300
                 Layout.fillHeight: true
-                spacing: 12
-
-
-                Layout.alignment: Qt.AlignRight | Qt.AlignTop
-                Layout.margins: 10
-
-                RobotStatusPanel {
-                    id: _robotStatus
-                    Layout.preferredWidth: 400
-                    Layout.maximumWidth: 400
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: 75
-                }
-
-
-                ControlButtonsPanel {
-                    id: _controlButtons
-                    Layout.preferredWidth: 400
-                    Layout.maximumWidth: 400
-                    Layout.fillWidth: true
-                }
-
-                VelocityPanel {
-                    id: _velocityPanel
-                    Layout.preferredWidth: 400
-                    Layout.maximumWidth: 400
-                    Layout.fillWidth: true
-                }
-
-                MotionControlPanel {
-                    id: _motionControlBtns
-                    Layout.preferredWidth: 200
-                }
-
             }
         }
-
     }
+
+
+
 }
+
+
+
+
 
 

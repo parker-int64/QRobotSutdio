@@ -5,7 +5,7 @@ import RobotControl
 
 Pane {
     id: _angleAndAcceleration
-    Layout.preferredWidth: 300
-    Layout.fillHeight: true
+    implicitWidth: 300
+    implicitHeight: 200
     Material.elevation: 6
 }

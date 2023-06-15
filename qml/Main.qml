@@ -10,8 +10,8 @@ ApplicationWindow {
     id: root
     width: 1200
     height: 800
-    minimumWidth: 800  // Set the minimal width
-    minimumHeight: 600  // Set the minimal height
+    minimumWidth: 1024  // Set the minimal width
+    minimumHeight: 768  // Set the minimal height
     visible: true
     title: qsTr("QRobot Studio")
 

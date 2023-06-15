@@ -6,8 +6,8 @@ import RobotControl
 Pane {
     id: _robot3dView
 
-    width: 600
-    height: 400
+    implicitWidth: 400
+    implicitHeight: 400
 
     Material.elevation: 6
 
