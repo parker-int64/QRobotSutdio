@@ -15,11 +15,24 @@ Pane {
         anchors.fill: parent
         spacing: 10
 
+        Label {
+            id: _frame
+            text: qsTr("Frame")
+        }
+
+        ComboBox {
+            id: _frameSelect
+            Layout.preferredHeight: 50
+            model: [qsTr("World"), qsTr("Tool"), qsTr("Base")]
+
+        }
+
 
 
         Label {
             id: _status
             text: qsTr("Status")
+            Layout.alignment: Qt.AlignRight
         }
 
 
@@ -33,6 +46,28 @@ Pane {
 
             ToolTip.visible: hovered
             ToolTip.text:  _robotNominal ? qsTr("Normal") : qsTr("Not ready")
+        }
+
+
+        Switch {
+            id: _enableSwitch
+            text: checked ? qsTr("Enable") : qsTr("Disable")
+            Layout.alignment: Qt.AlignVCenter
+
+            ToolTip.visible: hovered
+            ToolTip.text: qsTr("Enable or disable the robot")
+
+        }
+
+
+        Button {
+            id: _eStopBtn
+            text: qsTr("E-STOP")
+            Material.background: Material.Red
+            hoverEnabled: true
+            ToolTip.visible: hovered
+            ToolTip.text: qsTr("Emergency stop")
+            Layout.alignment: Qt.AlignRight
         }
 
 

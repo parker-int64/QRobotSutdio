@@ -8,4 +8,9 @@ Pane {
     implicitWidth: 300
     implicitHeight: 200
     Material.elevation: 6
+
+    GridLayout {
+        id: _infoPanel
+
+    }
 }

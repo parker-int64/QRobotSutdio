@@ -24,7 +24,7 @@ Pane {
             from: 1
             to: 100
             stepSize: 1 // Step size set to 1
-            value: 10  // Default velocity.
+            value: 10   // Default velocity.
             ToolTip.visible: pressed
             Material.accent: Material.Green
 
@@ -45,6 +45,7 @@ Pane {
 
         Label {
             id: _velocityNum
+            width: 75
             text: _velocitySlider.value + "%"
             Layout.leftMargin: 10
             Layout.alignment: Qt.AlignRight

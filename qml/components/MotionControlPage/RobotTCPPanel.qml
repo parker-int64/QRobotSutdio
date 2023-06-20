@@ -8,10 +8,9 @@ Pane {
     id: _motionControls
     implicitWidth: 300
     implicitHeight: 480
-
     ColumnLayout {
         anchors.fill: parent
-        spacing: 20
+        spacing: 5
 
         RowLayout {
             Layout.alignment: Qt.AlignTop
@@ -36,13 +35,12 @@ Pane {
             }
         }
 
-
         RowLayout {
             id: _zOperation
             spacing: 50
             Layout.preferredHeight: 75
-            Layout.alignment: Qt.AlignHCenter
-            Layout.bottomMargin: 50
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+            Layout.bottomMargin: 20
 
 
             Rectangle {
@@ -115,7 +113,8 @@ Pane {
         Item {
             id: _xyOperation
             Layout.alignment: Qt.AlignHCenter
-            Layout.bottomMargin: 100
+            Layout.topMargin: 20
+            Layout.bottomMargin: 70
 
             Rectangle {
                 id: _xyCenter
@@ -268,10 +267,7 @@ Pane {
         }
 
 
-        Label {
-            Layout.alignment: Qt.AlignHCenter
-            text: qsTr("TCP Movement")
-        }
+
 
 
     }
