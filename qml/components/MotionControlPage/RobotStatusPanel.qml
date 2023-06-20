@@ -7,7 +7,6 @@ Pane {
     id: _robotStatus
     implicitWidth: 400
     implicitHeight: 75
-    Material.elevation: 6
     property bool _robotNominal: false
 
     RowLayout {
@@ -32,6 +31,7 @@ Pane {
         Label {
             id: _status
             text: qsTr("Status")
+
             Layout.alignment: Qt.AlignRight
         }
 
@@ -51,8 +51,9 @@ Pane {
 
         Switch {
             id: _enableSwitch
-            text: checked ? qsTr("Enable") : qsTr("Disable")
+            text: checked ? qsTr("ON") : qsTr("OFF")
             Layout.alignment: Qt.AlignVCenter
+            Layout.preferredWidth: 120
 
             ToolTip.visible: hovered
             ToolTip.text: qsTr("Enable or disable the robot")
@@ -67,7 +68,6 @@ Pane {
             hoverEnabled: true
             ToolTip.visible: hovered
             ToolTip.text: qsTr("Emergency stop")
-            Layout.alignment: Qt.AlignRight
         }
 
 
@@ -79,9 +79,9 @@ Pane {
 //            visible: false
 //        }
         // act like a spacer
-        Item {
-            Layout.fillWidth: true
-        }
+//        Item {
+//            Layout.fillWidth: true
+//        }
 
     }
 

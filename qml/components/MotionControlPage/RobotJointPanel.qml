@@ -6,7 +6,7 @@ import RobotControl
 
 Pane {
     id: _motionControls
-    implicitWidth: 300
+    implicitWidth: 260
     implicitHeight: 480
 
     ColumnLayout {
@@ -15,7 +15,6 @@ Pane {
 
         RowLayout {
             Layout.alignment: Qt.AlignTop
-            Layout.preferredWidth: 300
 
             Label {
                 text: qsTr("Step")
@@ -33,6 +32,7 @@ Pane {
 
             Label {
                 text: "°"
+                font.pixelSize: 24
             }
         }
 
@@ -47,9 +47,10 @@ Pane {
 
                 TextField {
                     text: "0.000"  // Default
-                    Layout.preferredWidth: 120
-                    Layout.preferredHeight: 40
-
+                    Layout.preferredWidth: 90
+                    Layout.preferredHeight: 30
+                    readOnly: true
+                    font.pixelSize: 12
                 }
 
                 Label {

@@ -56,28 +56,40 @@ Pane {
 
                 Robot3DView {
                     id: _3dview
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.maximumWidth: 1200
+                    Layout.maximumHeight: 800
+                    Layout.alignment: Qt.AlignHCenter
 
                 }
 
-//                RobotPositionInfoPanel {
-//                    id: _xyzAndRpy
-//                }
+                RobotPositionInfoPanel {
+                    id: _xyzAndRpy
+                    Layout.fillWidth: true
+                    Layout.maximumWidth: 860
+                    Layout.alignment: Qt.AlignHCenter
+                    Layout.topMargin: 20
+                }
 
                 RobotVelocityPanel {
                     id: _velocityPanel
                     Layout.fillWidth: true
+                    Layout.maximumWidth: 800
+                    Layout.topMargin: 10
+                    Layout.alignment: Qt.AlignHCenter
                 }
             }
 
             ColumnLayout {
                 id: _jointMovement
                 Layout.alignment: Qt.AlignTop
-                Layout.preferredWidth: 300
+
                 Layout.fillHeight: true
 
                 RobotJointPanel {
                     id: _jointPanel
-                    Layout.preferredWidth: 300
+                    Layout.preferredWidth: 280
                     Layout.fillHeight: true
                 }
             }

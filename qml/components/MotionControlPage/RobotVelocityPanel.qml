@@ -7,7 +7,6 @@ Pane {
 
     implicitWidth: 400
     implicitHeight: 75
-    Material.elevation: 5
 
     RowLayout {
         id: _container
