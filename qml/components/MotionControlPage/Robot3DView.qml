@@ -15,7 +15,7 @@ Pane {
     IconSvg {
         width: 400
         height: 400
-        source: "file:///D:/project/QRobotStudio/QRobotStudio/temp/img/xarm.jpg"
+        source: "/images/demo.png"
         anchors.centerIn: parent
     }
 

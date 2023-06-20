@@ -5,7 +5,7 @@
 <a href="README.md">English</a> | 简体中文
 </p>
 <div align="center"><p>基于Qt Quick编写的一个机器人控制软件，纯属个人兴趣</p></div>
-
+<div align="center"><img src="./screenshots/screenshot1.png" /></div>
 
 ## 怎么使用捏
 

@@ -6,6 +6,7 @@ English | <a href="README_zh_CN.md">简体中文</a>
 </p>
 <div align="center"><p>A Qt Quick based robot control software, personal interest only.</p></div>
 
+<div align="center"><img src="./screenshots/screenshot1.png" /></div>
 
 ## How to use
 

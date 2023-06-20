@@ -105,6 +105,14 @@ qt_add_qml_module(${CMAKE_PROJECT_NAME}
     RESOURCES ${RES_FILES}
 )
 
+
+set(IMAGE_FILES assets/images/demo.png)
+
+qt_add_resources(${CMAKE_PROJECT_NAME} "images"
+                PREFIX "/images"
+                BASE "assets/images" # alias
+                FILES ${IMAGE_FILES})
+
 # Extra QML module
 add_subdirectory(modules/ExtraUtils)
 
