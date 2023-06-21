@@ -8,6 +8,9 @@ English | <a href="README_zh_CN.md">简体中文</a>
 
 <div align="center"><img src="./screenshots/screenshot1.png" /></div>
 
+
+# WORK IN PROGRESS
+
 ## How to use
 
 Download the `pre-built` binaries directly from the `Release` page. Install it and launch the executable file.

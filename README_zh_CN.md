@@ -7,6 +7,8 @@
 <div align="center"><p>基于Qt Quick编写的一个机器人控制软件，纯属个人兴趣</p></div>
 <div align="center"><img src="./screenshots/screenshot1.png" /></div>
 
+# 工作进展中，有时间就更，没时间它可能就烂掉了
+
 ## 怎么使用捏
 
 从`Release`页面可以下载预编译的安装包，安装之后运行就行。文档嘛，在慢慢更新
