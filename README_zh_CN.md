@@ -33,3 +33,8 @@ git clone https://github.com/parker-int64/QRobotSutdio
 + 使用IDE：Qt Creator或者是CLion,将`CMakeLists.txt`作为项目打开
 
 + 编译工程，然后尝试执行。
+
+
+### 参与贡献本项目 & 帮助我完成本项目
+
+欢迎提出问题和建议，但我不能保证所有的都会解决。

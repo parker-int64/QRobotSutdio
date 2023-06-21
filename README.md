@@ -34,3 +34,10 @@ git clone https://github.com/parker-int64/QRobotSutdio
 + Use your IDE, such as Qt Creator or CLion to open the `CMakeLists.txt` as project.
 
 + Build the project. Then launch it.
+
+
+### Contribute & Help me improve the project
+
+Help or suggestions are welcome! However, I cant guarantee to fix them all.
+
+
