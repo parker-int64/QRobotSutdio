@@ -24,7 +24,7 @@ Pane {
 
             ColumnLayout {
                 id: _tcpMovement
-                Layout.preferredWidth: 300
+                Layout.preferredWidth: 280
                 Layout.fillHeight: true
                 Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
                 spacing: 0
@@ -50,7 +50,11 @@ Pane {
                 Layout.fillHeight: true
 
                 RobotStatusPanel {
+                    Layout.topMargin: 10
+                    Layout.bottomMargin: 10
                     Layout.fillWidth: true
+                    Layout.maximumWidth: 1200
+                    Layout.alignment: Qt.AlignHCenter
                     id: _statusPanel
                 }
 
@@ -93,7 +97,6 @@ Pane {
                     Layout.fillHeight: true
                 }
             }
-
         }
 
     }

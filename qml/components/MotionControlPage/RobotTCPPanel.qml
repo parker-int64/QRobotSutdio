@@ -14,7 +14,7 @@ Pane {
 
         RowLayout {
             Layout.alignment: Qt.AlignTop
-            Layout.preferredWidth: 300
+            Layout.preferredWidth: 280
 
             Label {
                 text: qsTr("Step")

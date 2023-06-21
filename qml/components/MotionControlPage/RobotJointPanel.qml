@@ -39,7 +39,7 @@ Pane {
 
         Repeater {
             id: _jointControlRepeater
-            model: [qsTr("Joint 1"), qsTr("Joint 2"), qsTr("Joint 3"), qsTr("Joint 4"), qsTr("Joint 5"), qsTr("Joint 6")]
+            model: [qsTr("Joint 1"), qsTr("Joint 2"), qsTr("Joint 3"), qsTr("Joint 4"), qsTr("Joint 5"), qsTr("Joint 6"), qsTr("Joint 7")]
 
             RowLayout {
                 required property string modelData

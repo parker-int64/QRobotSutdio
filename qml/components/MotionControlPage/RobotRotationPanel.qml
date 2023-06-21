@@ -6,7 +6,7 @@ import RobotControl
 
 Pane {
     id: _motionControls
-    implicitWidth: 300
+    implicitWidth: 280
     implicitHeight: 480
 
     ColumnLayout {
@@ -18,16 +18,11 @@ Pane {
             model: ["Rx", "Ry", "Rz"]
 
             RowLayout {
-                Layout.preferredWidth: 280
+                Layout.preferredWidth: 120
+                Layout.alignment: Qt.AlignHCenter
                 required property string modelData
 
                 spacing: 10
-
-                Label {
-                    text: modelData
-                    font.pixelSize: 24
-                    font.weight: 300
-                }
 
                 Rectangle {
                     id: _rotMinus
@@ -52,13 +47,19 @@ Pane {
                 }
 
 
+                Label {
+                    text: modelData
+                    font.pixelSize: 24
+                    font.weight: 300
+                }
+
+
                 Rectangle {
                     id: _rotPlus
                     color: "#E4E4E4"
                     width: 48
                     height: 48
                     radius: 6
-                    Layout.leftMargin: 20
 
                     IconFont {
                         source: "\ue145"

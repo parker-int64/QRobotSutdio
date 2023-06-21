@@ -7,6 +7,7 @@ Pane {
     id: _robotStatus
     implicitWidth: 400
     implicitHeight: 75
+    Material.elevation: 6
     property bool _robotNominal: false
 
     RowLayout {
@@ -21,9 +22,15 @@ Pane {
 
         ComboBox {
             id: _frameSelect
+            Layout.preferredWidth: 120
             Layout.preferredHeight: 50
+            font.pixelSize: 12
             model: [qsTr("World"), qsTr("Tool"), qsTr("Base")]
+        }
 
+
+        Item {
+            Layout.fillWidth: true
         }
 
 
@@ -31,7 +38,6 @@ Pane {
         Label {
             id: _status
             text: qsTr("Status")
-
             Layout.alignment: Qt.AlignRight
         }
 
@@ -49,40 +55,42 @@ Pane {
         }
 
 
-        Switch {
-            id: _enableSwitch
-            text: checked ? qsTr("ON") : qsTr("OFF")
-            Layout.alignment: Qt.AlignVCenter
-            Layout.preferredWidth: 120
-
-            ToolTip.visible: hovered
-            ToolTip.text: qsTr("Enable or disable the robot")
-
+        ButtonGroup {
+            id: _robotOperation
+            buttons: _row.children
         }
 
+        Row {
+            id: _row
+            spacing: 20
 
-        Button {
-            id: _eStopBtn
-            text: qsTr("E-STOP")
-            Material.background: Material.Red
-            hoverEnabled: true
-            ToolTip.visible: hovered
-            ToolTip.text: qsTr("Emergency stop")
+            Button {
+                id: _enableBtn
+                text: qsTr("Enable")
+            }
+
+
+            Button {
+                id: _disableBtn
+                text: qsTr("Disable")
+
+
+            }
+
+            Button {
+                id: _eStopBtn
+                Material.background: Material.Red
+                hoverEnabled: true
+                ToolTip.visible: hovered
+                ToolTip.text: qsTr("Emergency stop")
+
+                Text {
+                    text: qsTr("E-STOP")
+                    anchors.centerIn: parent
+                    color: "#FFFFFF"
+                }
+            }
         }
-
-
-        // error string
-//        Label {
-//            id: _eWhat
-//            Layout.fillWidth: true
-//            text: qsTr("eWhat")
-//            visible: false
-//        }
-        // act like a spacer
-//        Item {
-//            Layout.fillWidth: true
-//        }
-
     }
 
 }
