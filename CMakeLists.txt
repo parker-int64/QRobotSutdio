@@ -54,6 +54,7 @@ set(QML_FILES
     qml/components/MotionControlPage/RobotTCPPanel.qml
     qml/components/MotionControlPage/RobotRotationPanel.qml
     qml/components/MotionControlPage/RobotJointPanel.qml
+    qml/components/SettingsPage/GeneralSettings.qml
     qml/pages/HomePage.qml
     qml/pages/SettingsPage.qml
     qml/pages/AboutPage.qml
