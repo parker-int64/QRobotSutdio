@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(QRobotStudio
-    VERSION 0.1.1.60
+    VERSION 0.1.1.120
     DESCRIPTION "A Qt Quick based robot control software, personal interest only."
     HOMEPAGE_URL "https://github.com/parker-int64/QRobotSutdio"
     LANGUAGES CXX C)
@@ -32,6 +32,10 @@ endif()
 configure_file(config.h.in config.h)
 configure_file(winicon.rc.in winicon.rc)
 
+# Generated JSON Configuration file
+string(TIMESTAMP COMPILE_TIME "%Y/%m/%d %H:%M:%S") # Time stamp
+configure_file(config/general.json.in config/general.json)
+
 
 # Set the source files
 set(PROJECT_SOURCES
@@ -60,7 +64,6 @@ set(QML_FILES
     qml/pages/AboutPage.qml
     qml/pages/MotionControlPage.qml
     qml/Main.qml)
-
 
 
 

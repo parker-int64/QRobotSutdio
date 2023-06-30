@@ -1,0 +1,7 @@
+{
+    "comment": "This file is auto generated, do not edit.",
+    "generated time": "@COMPILE_TIME@",
+    "version": "${CMAKE_PROJECT_VERSION_MAJOR}.${CMAKE_PROJECT_VERSION_MINOR}.${CMAKE_PROJECT_VERSION_PATCH}.${CMAKE_PROJECT_VERSION_TWEAK}",
+    "language": "en_US",
+    "dark mode": "false"
+}
