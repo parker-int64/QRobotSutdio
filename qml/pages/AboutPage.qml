@@ -109,11 +109,11 @@ Pane {
             }
 
 
-            Rectangle {
-                id: spacer
-                color: "transparent"
+            Item {
                 Layout.fillHeight: true
             }
+
+
 
         }
     }

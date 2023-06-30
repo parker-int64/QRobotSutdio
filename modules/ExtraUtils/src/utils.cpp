@@ -1,8 +1,9 @@
 #include "utils.h"
 #include "config.h"
+#include <QDebug>
 
 Utils::Utils(QObject *parent)
-    : QObject{parent}
+    : QObject{parent}, m_darkMode(false)
 {
 
 }
@@ -31,4 +32,19 @@ QString Utils::getAppDescription() const {
 
 QString Utils::getAppHomePageUrl() const {
     return QString(tr("Application home url: %1").arg(APP_HOMEPAGE_URL));
+}
+
+
+bool Utils::darkMode() const {
+    return m_darkMode;
+}
+
+void Utils::setDarkMode(bool darkMode) {
+    m_darkMode = darkMode;
+    emit darkModeChanged(darkMode);
+
+#ifdef _DEBUG
+    qDebug() << "[Info]: Set dark mode to: " << m_darkMode << Qt::endl;
+#endif
+
 }

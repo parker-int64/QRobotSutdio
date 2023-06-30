@@ -8,6 +8,9 @@ class Utils : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
+
+    Q_PROPERTY(bool darkMode READ darkMode WRITE setDarkMode NOTIFY darkModeChanged)
+
 public:
     explicit Utils(QObject *parent = nullptr);
 
@@ -19,7 +22,18 @@ public:
 
     Q_INVOKABLE QString getAppVersion() const;
 
+
+    Q_INVOKABLE bool darkMode() const;
+
+
 signals:
+    void darkModeChanged(bool darkMode);
+
+public slots:
+    void setDarkMode(bool darkMode);
+
+private:
+    bool m_darkMode;
 
 };
 
