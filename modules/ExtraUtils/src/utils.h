@@ -43,11 +43,11 @@ public:
      * @return true: if write successfully.
      * @return false: write failed.
      */
-    template <typename T> bool writeJsonValue(const QString jsonFilePath ,const QString &key, const T &value) {
+    template <typename T> bool writeJsonValue(const QString &jsonFilePath ,const QString &key, const T &value) {
         QFile file(jsonFilePath);
 
         if( !file.open(QIODevice::ReadWrite) ) {
-            qDebug() << "[Error] Cannot open " << "./config/general.json" << Qt::endl;
+            qDebug() << "[Error] Cannot open " << jsonFilePath << Qt::endl;
             return false;
         }
 
@@ -63,7 +63,7 @@ public:
         QJsonObject obj = jsonDoc.object();
 
         if ( obj.contains(key) ) {
-            QJsonValueRef ref = obj.find("language").value();
+            QJsonValueRef ref = obj.find(key).value();
             ref = QJsonValue(value);
         } else {
             obj[key] = value;
