@@ -70,8 +70,20 @@ Item {
                         onActivated: {
                             console.log(currentIndex)
 
-                            if( currentIndex !== 0 ){
-                                _restartAppContentDialog.open() // This opens a dialog to ask user to restart the app.
+//                            if( currentIndex !== 0 ){
+//                                // _restartAppContentDialog.open() // This triggers a dialog to ask user to restart the app.
+//                                _utils.setLanguage("zh_CN")
+
+//                            }
+
+                            switch(currentIndex) {
+                            case 1:
+                                console.log("set language: zh_CN")
+                                _utils.setLanguage("zh_CN")
+//                                _utils.requestRetranslate() // This ask the app to retranslate.
+                                break;
+                            default:
+                                console.log("set default language: en_US")
                             }
                         }
                     }
@@ -115,6 +127,9 @@ Item {
         }
 
     }
+
+
+
 
 
     Dialog {

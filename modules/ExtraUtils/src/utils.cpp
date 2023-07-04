@@ -1,6 +1,11 @@
 #include "utils.h"
 #include "config.h"
+#include <QCoreApplication>
+
 #include <QDebug>
+#include <QFile>
+#include <QJsonDocument>
+#include <QJsonObject>
 
 Utils::Utils(QObject *parent)
     : QObject{parent}, m_darkMode(false)
@@ -41,10 +46,20 @@ bool Utils::darkMode() const {
 
 void Utils::setDarkMode(bool darkMode) {
     m_darkMode = darkMode;
+
+//    if( darkMode ) {
+//        QQuickStyle::setStyle();
+//    }
     emit darkModeChanged(darkMode);
 
 #ifdef _DEBUG
     qDebug() << "[Info]: Set dark mode to: " << m_darkMode << Qt::endl;
 #endif
 
+}
+
+
+bool Utils::setLanguage(const QString &suffix) {
+    bool writeStatus = writeJsonValue<QString>("./config/general.json" ,"language", suffix);
+    return writeStatus;
 }
